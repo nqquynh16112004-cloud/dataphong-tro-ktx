@@ -402,56 +402,64 @@
 <footer>Dữ liệu cập nhật 04/06/2026 · Team Hỗ Trợ Tìm Nhà ĐH Ngân Hàng · Nội bộ, không phát tán</footer>
 
 <script>
-const DRIVE = 'https://drive.google.com/drive/folders/1FjKTpCQevHzAhGxzdxlE1zIxLvdf80Ez';
+const DRIVE_ROOT = 'https://drive.google.com/drive/folders/1FjKTpCQevHzAhGxzdxlE1zIxLvdf80Ez';
+const DR = {
+  thinh:  'https://drive.google.com/drive/folders/1Cu5WmUUYgx6rptKAKWhVYznLAITVPQ2P',
+  son:    'https://drive.google.com/drive/folders/1Cu5WmUUYgx6rptKAKWhVYznLAITVPQ2P',
+  family: 'https://drive.google.com/drive/folders/1Cu5WmUUYgx6rptKAKWhVYznLAITVPQ2P',
+  quoc:   'https://drive.google.com/drive/folders/1dRfBG1B8rAzFTAQbOr24U-N354_Rzq9I',
+  lh_tro: 'https://drive.google.com/drive/folders/1HzWip2yFqqZSbznrL_SB1uyLw76pTQe_',
+  lh_ch:  'https://drive.google.com/drive/folders/1iAd9h0ck6kuh4epOdHDLs40X_zAAsz9t',
+};
 
 const D = [
   // ── KTX ─────────────────────────────────────────────────────────────────────
   { id:'k1', t:'KTX', n:'Chú Thịnh — CN Đường 10',
     a:'Đường số 10, Linh Chiểu, Thủ Đức',
     p1:1.1, p2:1.4, g:'Nữ', s:'Còn chỗ', sl:null,
-    ph:'0913747793', ct:'Chú Thịnh',
+    ph:'0913747793', ct:'Chú Thịnh', dr:DR.thinh,
     am:['Điều hòa','Tủ lạnh','WC riêng','Bếp','Wifi','Giữ xe','Khóa vân tay'],
     no:'Cách trường ~5 phút đi xe. Bao điện nước wifi — không phát sinh.' },
 
   { id:'k2', t:'KTX', n:'Chú Thịnh — CN 58 Đường 8',
     a:'58 Đường số 8, Linh Chiểu, Thủ Đức',
     p1:1.4, p2:1.7, g:'Nữ', s:'Còn chỗ', sl:'<20',
-    ph:'0913747793', ct:'Chú Thịnh',
+    ph:'0913747793', ct:'Chú Thịnh', dr:DR.thinh,
     am:['Điều hòa 24/7','Tủ lạnh riêng','WC riêng','Nước nóng lạnh','Bếp đầy đủ','Wifi','Giặt đồ miễn phí','Sạc xe điện','Khóa vân tay','Ban công','Sân thượng'],
     no:'Cọc 1 tháng. Bao điện nước wifi 100% — không phát sinh. Sân thượng, ban công thoáng mát.' },
 
   { id:'k3', t:'KTX', n:'Chú Sơn — CN1 Đường 8 (Nữ)',
     a:'42/1 Đường số 8, Linh Trung, Thủ Đức',
     p1:1.6, p2:1.8, g:'Nữ', s:'Còn chỗ', sl:3,
-    ph:'0853151595', ct:'Đăng Vĩnh',
+    ph:'0853151595', ct:'Đăng Vĩnh', dr:DR.son,
     am:['Máy lạnh','Tủ lạnh','Máy giặt','Máy sấy','Nước nóng lạnh','Bếp riêng T2-3','Thang máy','Khóa vân tay nhà xe'],
     no:'Hợp đồng 6-12 tháng. 1.8tr bao điện nước — không phát sinh. Còn 3 slot.' },
 
   { id:'k4', t:'KTX', n:'Chú Sơn — CN2 Đường 8 ✨ Nice Vip',
     a:'41 Đường số 8, Linh Trung, Thủ Đức',
     p1:1.6, p2:1.8, g:'Nam + Nữ', s:'Còn chỗ', sl:'~20',
-    ph:'0853151595', ct:'Đăng Vĩnh',
+    ph:'0853151595', ct:'Đăng Vĩnh', dr:DR.son,
     am:['Face ID','Máy lạnh','Tủ lạnh','Bếp từ + tủ bếp','Máy giặt','Máy sấy','WC riêng nam/nữ','Dọn phòng mỗi ngày','Sạc xe điện','Wifi','Camera an ninh'],
     no:'Nice vip ✨ Bao điện nước wifi — không phát sinh. Dọn phòng hàng ngày. Không giới nghiêm. ~20 giường còn.' },
 
   { id:'k5', t:'KTX', n:'KTX Family — CN1 Đường 23',
     a:'13 Đường 23, Linh Chiểu, Thủ Đức',
     p1:1.3, p2:1.8, g:'Nam + Nữ', s:'Còn chỗ', sl:null,
-    ph:'0983564111', ct:'Phi Hùng',
+    ph:'0983564111', ct:'Phi Hùng', dr:DR.family,
     am:['Thang máy','Máy lạnh 24/7','Tủ lạnh','Bếp từ','Máy giặt','WC riêng','Dọn phòng/tuần','Khóa vân tay','Camera 24/7','Sạc xe điện','Wifi'],
     no:'Phòng 6-8 người. Chủ là công an — an ninh tốt. 2-3 phút đi xe đến trường. Bao điện nước wifi.' },
 
   { id:'k6', t:'KTX', n:'KTX Family — CN2 Đường 20',
     a:'47 Đường 20, Linh Chiểu, Thủ Đức',
     p1:1.3, p2:1.8, g:'Nam + Nữ', s:'Còn chỗ', sl:null,
-    ph:'0983564111', ct:'Phi Hùng',
+    ph:'0983564111', ct:'Phi Hùng', dr:DR.family,
     am:['Thang máy','Máy lạnh 24/7','Tủ lạnh','Bếp từ','Máy giặt','WC riêng','Khóa vân tay','Camera 24/7','Wifi'],
     no:'2-3 phút đi xe đến trường. Cùng chủ & tiện ích CN1.' },
 
   { id:'k7', t:'KTX', n:'KTX Family — CN3 Đường 17 🚶',
     a:'42 Đường 17, Linh Chiểu, Thủ Đức',
     p1:1.3, p2:1.8, g:'Nam + Nữ', s:'Còn chỗ', sl:null,
-    ph:'0983564111', ct:'Phi Hùng',
+    ph:'0983564111', ct:'Phi Hùng', dr:DR.family,
     am:['Thang máy','Máy lạnh 24/7','Tủ lạnh','Bếp từ','Máy giặt','WC riêng','Khóa vân tay','Camera 24/7','Wifi'],
     no:'GẦN NHẤT trong danh sách — chỉ 1-2 phút đi bộ đến trường!' },
 
@@ -459,70 +467,70 @@ const D = [
   { id:'t1', t:'TRỌ', n:'Chú Quốc — 3.2tr/tháng',
     a:'29/4 Đường 16, Linh Chiểu, Thủ Đức',
     p1:3.2, p2:3.2, g:'Nam + Nữ', s:'Còn phòng', sl:1,
-    ph:'0908451415', ct:'Chú Quốc (Tuấn Nguyễn)',
+    ph:'0908451415', ct:'Chú Quốc (Tuấn Nguyễn)', dr:DR.quoc,
     am:['Máy lạnh','WC riêng','Wifi','Giữ xe'],
     no:'Còn 1 phòng. Điện 3.500đ/kWh · Nước 18.000đ/m³ · Net 100k + rác 50k/tháng.' },
 
   { id:'t2', t:'TRỌ', n:'Chú Quốc — 3.5tr/tháng',
     a:'29/4 Đường 16, Linh Chiểu, Thủ Đức',
     p1:3.5, p2:3.5, g:'Nam + Nữ', s:'Còn phòng', sl:3,
-    ph:'0908451415', ct:'Chú Quốc (Tuấn Nguyễn)',
+    ph:'0908451415', ct:'Chú Quốc (Tuấn Nguyễn)', dr:DR.quoc,
     am:['Máy lạnh','WC riêng','Wifi','Giữ xe'],
     no:'Còn 3 phòng. Điện 3.500đ/kWh · Nước 18.000đ/m³ · Net 100k + rác 50k/tháng.' },
 
   { id:'t3', t:'TRỌ', n:'Chú Quốc — 4.0tr/tháng',
     a:'29/4 Đường 16, Linh Chiểu, Thủ Đức',
     p1:4.0, p2:4.0, g:'Nam + Nữ', s:'Còn phòng', sl:8,
-    ph:'0908451415', ct:'Chú Quốc (Tuấn Nguyễn)',
+    ph:'0908451415', ct:'Chú Quốc (Tuấn Nguyễn)', dr:DR.quoc,
     am:['Máy lạnh','WC riêng','Wifi','Giữ xe'],
     no:'Còn 8 phòng. Điện 3.500đ/kWh · Nước 18.000đ/m³ · Net 100k + rác 50k/tháng.' },
 
   { id:'t4', t:'TRỌ', n:'Long Hương — Đơn 2.6tr',
     a:'Sát Vinatex, cách Kha Vạn Cân 200m, Linh Đông, TĐ',
     p1:2.6, p2:2.6, g:'Nam + Nữ', s:'Còn phòng', sl:19,
-    ph:'0906349596', ct:'Cô Hương (Long Hương)',
+    ph:'0906349596', ct:'Cô Hương (Long Hương)', dr:DR.lh_tro,
     am:['WC riêng','Wifi','Giữ xe','Khóa vân tay','Sân vườn'],
     no:'19 phòng mới xây đang hoàn thiện. Máy lạnh +300k/tháng. Giờ tự do. Cách ĐH Ngân Hàng 2-4km.' },
 
   { id:'t5', t:'TRỌ', n:'Long Hương — Đôi 2.7tr',
     a:'Sát Vinatex, Linh Đông, Thủ Đức',
     p1:2.7, p2:2.7, g:'Nam + Nữ', s:'Còn phòng', sl:null,
-    ph:'0906349596', ct:'Cô Hương (Long Hương)',
+    ph:'0906349596', ct:'Cô Hương (Long Hương)', dr:DR.lh_tro,
     am:['WC riêng','Wifi','Giữ xe','Khóa vân tay'],
     no:'Máy lạnh +300k/tháng. Điện 3.800đ/kWh.' },
 
   { id:'t6', t:'TRỌ', n:'Long Hương — Studio 3.2tr',
     a:'Sát Vinatex, Linh Đông, Thủ Đức',
     p1:3.2, p2:3.2, g:'Nam + Nữ', s:'Còn phòng', sl:null,
-    ph:'0906349596', ct:'Cô Hương (Long Hương)',
+    ph:'0906349596', ct:'Cô Hương (Long Hương)', dr:DR.lh_tro,
     am:['WC riêng','Ban công','Wifi','Giữ xe','Khóa vân tay'],
     no:'Studio có ban công. Máy lạnh +300k/tháng. Điện 3.800đ/kWh.' },
 
   { id:'t7', t:'TRỌ', n:'Long Hương — Căn hộ mini 5tr',
     a:'Hẻm 196 Đường 11, Trường Thọ, Thủ Đức',
     p1:5.0, p2:5.0, g:'Nam + Nữ', s:'Còn phòng', sl:null,
-    ph:'0906349596', ct:'Cô Hương (Long Hương)',
+    ph:'0906349596', ct:'Cô Hương (Long Hương)', dr:DR.lh_ch,
     am:['Full nội thất','Máy lạnh','Gác lửng','Bếp từ','Thang máy riêng','WC riêng','Máy nóng lạnh','Phòng giặt riêng','Wifi','Giữ xe'],
     no:'Full nội thất cao cấp. Quản lý 200k/tháng (bao vệ sinh + rác + giặt + internet). Giữ xe 80k. Thang máy riêng.' },
 
   { id:'t8', t:'TRỌ', n:'Ánh Nga',
     a:'29/1 Đường 16, Linh Chiểu, Thủ Đức',
     p1:3.2, p2:3.2, g:null, s:'Còn phòng', sl:null,
-    ph:'0799987512', ct:'Ánh Nga',
+    ph:'0799987512', ct:'Ánh Nga', dr:DRIVE_ROOT,
     am:[],
     no:'⚠ Thông tin chưa đầy đủ — cần khảo sát thêm trước khi tư vấn.' },
 
   { id:'t9', t:'TRỌ', n:'Út Nghĩa — 3.5tr',
     a:'Hẻm 29, Thủ Đức',
     p1:3.5, p2:3.5, g:'Nam + Nữ', s:'Còn phòng', sl:null,
-    ph:null, ct:'Út Nghĩa',
+    ph:null, ct:'Út Nghĩa', dr:DRIVE_ROOT,
     am:[],
     no:'⚠ Chưa có SĐT trong hệ thống — cần cập nhật thêm thông tin.' },
 
   { id:'t10', t:'TRỌ', n:'Út Nghĩa — 4.0tr',
     a:'Hẻm 29, Thủ Đức',
     p1:4.0, p2:4.0, g:'Nam + Nữ', s:'Còn phòng', sl:null,
-    ph:null, ct:'Út Nghĩa',
+    ph:null, ct:'Út Nghĩa', dr:DRIVE_ROOT,
     am:[],
     no:'⚠ Chưa có SĐT trong hệ thống — cần cập nhật thêm thông tin.' },
 ];
@@ -659,7 +667,7 @@ function rDet() {
       <div class="sec-lbl"><i class="ti ti-address-book" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Liên hệ & ảnh</div>
       <div class="det-actions">
         ${phoneBtn}
-        <a href="${DRIVE}" target="_blank" class="btn-action primary">
+        <a href="${d.dr}" target="_blank" class="btn-action primary">
           <i class="ti ti-photo" style="font-size:15px"></i>Xem ảnh Drive
         </a>
       </div>
